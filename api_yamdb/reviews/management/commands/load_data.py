@@ -31,10 +31,9 @@ def get_list_fields_model(model):
     {<поле модели>: <поле в таблице>}
     """
     fields_obj_list = model._meta.fields
-    fields = {
+    return {
         field.name: field.attname for field in fields_obj_list
     }
-    return fields
 
 
 def changes_fields(fields_model, table):
